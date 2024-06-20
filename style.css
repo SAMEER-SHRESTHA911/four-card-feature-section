@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --ff-sans : 'Poppins', sans-serif;
+    --ff-light: 200;
+    --ff-normal: 400;
+    --ff-bold: 600;
+
+    --ff-400: 0.9275rem;
+    --ff-500: 1.25rem;
+    --ff-600: 1.625rem;
+    --ff-900: 2.5rem;
+
+    --clr-neutral-900: hsl(234, 12%,34%);
+    --clr-neutral-400: hsl(229, 6%, 66%);
+    --clr-neutral-100: hsl(0, 0%, 98%);
+
+    --clr-teal: hsl(180,58%,56%);
+    --clr-red: hsl(0,70%,60%);
+    --clr--blue: hsl(212,75%,62%);
+    --clr-yellow: hsl(34,89%,65%);
+}
+*, 
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+html{
+    font-family: var(--ff-sans);
+    font-weight: var(--ff-normal);
+    line-height: 1.7;
+    color: var(--clr-neutral-400);
+
+}
+body{
+    margin:0;
+    padding-block-end: 5rem;
+}
+h1, h2, h3{
+    color: var(--clr-neutral-900);
+    line-height: 1.5;
+}
+header{
+    text-align: center;
+    margin-block: 3rem ;
+    /* border: 3px solid red; */
+}
+.wrapper{
+    margin-inline: auto;
+    max-width: 1100px;
+}
+.wrapper-narrow{
+    max-width: 550px;
+}
+.headingOne > h1{
+    font-weight: 200;
+    margin-bottom: -1rem;
+}
+.layout-grid{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    --gap : 2rem;
+    gap: var(--gap)
+}
+.layout-grid > *{
+    flex: 1;
+}
+.two{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 2;
+    max-width: fit-content;
+}
+.col{
+    display: flex;
+    gap: var(--gap);
+    /* border: 3px solid blueviolet; */
+}
+.card{
+    padding: 2rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    /* position: relative; */
+    height: 270px;
+    /* padding: 0.5rem; */
+}
+.card{
+    position: relative;
+}
+.card > img{
+    float: right;
+    margin: 0 auto;
+    height: 50px;
+    width: 50px;
+}
+.col:nth-child(1) .card {
+    border-top: 5px solid var(--clr-teal)
+}
+.col:nth-child(2) .card:nth-child(1){
+    border-top: 5px solid var(--clr-red)
+}
+.col:nth-child(2) .card:nth-child(2) {
+    border-top: 5px solid var(--clr-yellow)
+}
+.col:nth-child(3) .card {
+    border-top: 5px solid var(--clr--blue)
+}
+@media only screen and (max-width: 550px) {
+    body {
+      /* background-color: red; */
+      margin: 1rem;
+    }
+    .layout-grid{
+        flex-direction: column;
+    }
+  }
+@media only screen and (max-width: 800px) {
+    .two{
+        min-height: 50vh;
+        height: fit-content;
+        min-width: 40vw;
+    }
+    .card{
+        padding: 1rem;
+    }
+}
